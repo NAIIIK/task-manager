@@ -68,7 +68,7 @@ The codebase is organized **feature-first** (package per feature - entity, repos
 service, controller, DTOs live together), not layer-first:
 
 ```
-com.javarush.taskmanager
+com.example.taskmanager
 ├── auth/               registration, login, refresh, logout
 ├── user/               user entity, global role
 ├── project/            projects

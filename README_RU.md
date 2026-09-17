@@ -71,7 +71,7 @@ workflow и оставляют комментарии - всё под защит
 контроллер, DTO лежат вместе), а не по слоям:
 
 ```
-com.javarush.taskmanager
+com.example.taskmanager
 ├── auth/               регистрация, логин, refresh, logout
 ├── user/               сущность пользователя, глобальная роль
 ├── project/            проекты
