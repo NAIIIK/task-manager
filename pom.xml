@@ -10,11 +10,11 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.javarush</groupId>
+    <groupId>com.example</groupId>
     <artifactId>taskManager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>com.javarush.rodionov.taskManager</name>
-    <description>com.javarush.rodionov.taskManager</description>
+    <name>task-manager</name>
+    <description>A Jira/Trello-style task management REST API built with Spring Boot</description>
 
     <properties>
         <java.version>21</java.version>
