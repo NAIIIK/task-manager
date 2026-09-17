@@ -72,8 +72,8 @@ class GlobalExceptionHandlerTest {
         assertThat(response.getBody())
                 .isNotNull()
                 .extracting(
-                        apiError -> apiError != null ? apiError.error() : null,
-                        apiError1 -> apiError1 != null ? apiError1.message() : null
+                        ApiError::error,
+                        ApiError::message
                 )
                 .containsExactly("Conflict", CONFLICT_MSG);
     }
@@ -88,7 +88,7 @@ class GlobalExceptionHandlerTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
         assertThat(response.getBody())
                 .isNotNull()
-                .extracting(apiError -> apiError != null ? apiError.message() : null)
+                .extracting(ApiError::message)
                 .isEqualTo(NO_ACCESS_MSG);
     }
 
@@ -102,7 +102,7 @@ class GlobalExceptionHandlerTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
         assertThat(response.getBody())
                 .isNotNull()
-                .extracting(apiError -> apiError != null ? apiError.message() : null)
+                .extracting(ApiError::message)
                 .isEqualTo(ExceptionMessages.INVALID_CREDENTIALS_MSG);
     }
 
@@ -117,7 +117,7 @@ class GlobalExceptionHandlerTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
         assertThat(response.getBody())
                 .isNotNull()
-                .extracting(apiError -> apiError != null ? apiError.message() : null)
+                .extracting(ApiError::message)
                 .isEqualTo(message);
     }
 
@@ -131,7 +131,7 @@ class GlobalExceptionHandlerTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
         assertThat(response.getBody())
                 .isNotNull()
-                .extracting(apiError -> apiError != null ? apiError.message() : null)
+                .extracting(ApiError::message)
                 .isEqualTo(ExceptionMessages.INVALID_CREDENTIALS_MSG);
     }
 
@@ -164,7 +164,7 @@ class GlobalExceptionHandlerTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
         assertThat(response.getBody())
                 .isNotNull()
-                .extracting(apiError -> apiError != null ? apiError.message() : null)
+                .extracting(ApiError::message)
                 .isEqualTo(mustNotBeBlankMsg);
     }
 
@@ -177,7 +177,7 @@ class GlobalExceptionHandlerTest {
 
         assertThat(response.getBody())
                 .isNotNull()
-                .extracting(apiError -> apiError != null ? apiError.message() : null)
+                .extracting(ApiError::message)
                 .isEqualTo("Invalid value");
     }
 
@@ -192,7 +192,7 @@ class GlobalExceptionHandlerTest {
 
         assertThat(response.getBody())
                 .isNotNull()
-                .extracting(apiError -> apiError != null ? apiError.message() : null)
+                .extracting(ApiError::message)
                 .isEqualTo("Validation failed");
     }
 

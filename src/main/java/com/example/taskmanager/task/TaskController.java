@@ -3,7 +3,6 @@ package com.example.taskmanager.task;
 import com.example.taskmanager.exception.ApiError;
 import com.example.taskmanager.security.CurrentUserId;
 import com.example.taskmanager.task.dto.*;
-import com.javarush.taskmanager.task.dto.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
